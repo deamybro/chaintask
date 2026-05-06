@@ -4,5 +4,7 @@ dist
 *.db
 *.db-shm
 *.db-wal
+.env
 .env.local
+*.tsbuildinfo
 target
