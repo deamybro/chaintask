@@ -1,0 +1,12 @@
+[package]
+name = "bounty_escrow"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+borsh = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+solana-program = "1.18"

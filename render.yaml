@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: chaintask-api
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: corepack enable && corepack pnpm install --frozen-lockfile && corepack pnpm --filter @chaintask/api build
+    startCommand: corepack pnpm --filter @chaintask/api start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DATABASE_PATH
+        value: ./chaintask.db
+      - key: POLL_INTERVAL_MS
+        value: 15000
+      - key: GITHUB_TOKEN
+        sync: false
