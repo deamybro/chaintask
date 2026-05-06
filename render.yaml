@@ -13,5 +13,7 @@ services:
         value: ./chaintask.db
       - key: POLL_INTERVAL_MS
         value: 15000
+      - key: SEED_ON_START
+        value: true
       - key: GITHUB_TOKEN
         sync: false

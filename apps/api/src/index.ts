@@ -9,6 +9,12 @@ import { getRuntimeStatus, startRialoRuntime } from './rialo/runtime';
 
 dotenv.config();
 
+if (process.env.SEED_ON_START === 'true') {
+  // Demo-hosting path: create starter identity, bounty, and escrow state when
+  // the Render free instance boots with an empty local SQLite file.
+  require('./db/seed');
+}
+
 const app = express();
 const port = Number(process.env.PORT ?? 3001);
 
